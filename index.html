@@ -3,9 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta name="keywords" content="Красивый эффект">
 	 <meta name="description" content="Можно без описаний?...">
 	 <meta name="author" content="adamaka47"> 
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<title>Effect</title>
 
 	<style>
@@ -29,19 +32,21 @@
 		.main-section {
 			padding: 50px 30px;
 			position: relative;
-			height: 100vh;
-			background-color: #001122;
+			min-height: 100vh;
+			background-color: 000;
 			transition: 0.5s ease-in-out;
+			background-color: #fea100;
 			overflow: hidden;
 		}
 
-		.menu {
-		    position: relative;
+		.menuted {
+		    position: absolute;
 		    z-index: 5;
 		    margin: 0 auto;
 		    color: #fff;
 		    width: 210px;
 			display: inline-block;
+			left: 2%
 
 		}
 
@@ -53,6 +58,7 @@
 			height: 100%;
 			transition: 0.5s ease-in-out;
 			opacity: 1;
+			background-color: #222;
 		}
 
 		.bg {
@@ -71,7 +77,6 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(2,1,10,0.82);
 			z-index: -1;
 
 		}
@@ -79,7 +84,6 @@
 
 		.bg.ents {
 			display: block;
-			padding-left: 320px;
 			color: #fff;
 			font-size: 18px;
 			padding-top: 55px;
@@ -88,35 +92,39 @@
 		}
 
 		.bg-1 {
-			background: url('galaxy.jpg') center/cover no-repeat;
+			background-color: #222;
 		}
 
 		.bg-2 {
-			background: url('champion.jpg') center/cover no-repeat;
+			background-color: #012;
 		}
 
 		.bg-3 {
-			background: url('sword.jpg') center/cover no-repeat;
+			background-color: #102;
 		}
 
 		.bg-4 {
-			background: url('project.jpg') center/cover no-repeat;	
+			background-color: #001100;
 		}
 
 		.trf {
-			transform: translateZ(100px);
+			transform: translateZ(-2500px) rotate(-50deg);
 			transform-style: preserve-3d;
-			transition: 0.6s ease-in-out;
+			transition: 0.7s ease-in-out;
 		}
 
 		.ps {
-			perspective: 1000px;
+			perspective: 800px;
 		}
 
 		.ents__text {
 			font-size: 18px;
 			color: #af8;
 			line-height: 1.4;
+			margin: 0;
+			max-width: 420px;
+			min-height: 54px;
+			margin-bottom: 5px;
 		}
 
 		.sec-post__link {
@@ -147,13 +155,324 @@
 		.sec-post__link.active {
 		  background-color: #fff;
 		  color: #111;
-		  border-bottom: 2px solid #af8;
+		  border-bottom: 2px solid #ff0036;
 		}
 
 		.ops {
 			opacity: 0;
 			transition: 0.4s;
 		}
+
+	
+
+		.about-img {
+		  width: 420px;
+		  position: relative;
+		  z-index: 2;
+		  height: 540px;
+		   }
+		  .about-img::after, .about-img::before {
+		    content: '';
+		    position: absolute;
+		    border-radius: 15px;
+		    left: -2px;
+		    top: -2px;
+		    width: calc(100% + 4px);
+		    height: calc(100% + 4px);
+		    background-image: linear-gradient(45deg, indigo, #0000ff, #fea100, #af8, #ff0036, indigo, #0000ff, #fea100, #af8, #ff0036);
+		    background-size: 400%;
+		    z-index: -1;
+		    -webkit-animation: bxsd 20000ms linear infinite;
+		    animation: bxsd 20000ms linear infinite; }
+		  .about-img::after {
+		    -webkit-filter: blur(5px);
+		    filter: blur(5px); }
+		  .about-img .card {
+		    width: 98%;
+		    height: 98%;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    -webkit-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%); }
+		    .about-img .card::after {
+		      content: 'Hover me';
+		      position: absolute;
+		      top: 0;
+		      left: 0;
+		      background-color: #000;
+		      color: #fff;
+		      font-family: monospace;
+		      padding: 10px;
+		      font-size: 20px;
+		      border-radius: 4px;
+		      z-index: 1;
+		      border-radius: 5px;
+		      -webkit-animation: bxsd 20000ms linear infinite;
+		      animation: bxsd 20000ms linear infinite; }
+		    .about-img .card:hover .front {
+		      -webkit-transform: perspective(600px) rotateY(-180deg);
+		      transform: perspective(600px) rotateY(-180deg); }
+		    .about-img .card:hover .back {
+		      -webkit-transform: perspective(600px) rotateY(0);
+		      transform: perspective(600px) rotateY(0); }
+		  .about-img .front, .about-img .back {
+		    width: 100%;
+		    height: 100%;
+		    overflow: hidden;
+		    position: absolute;
+		    -webkit-backface-visibility: hidden;
+		    backface-visibility: hidden;
+		    -webkit-transition: transform 0.4s ease-in-out;
+		    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+		    transition: -webkit-transform 0.4s ease-in-out;
+		    transition: transform 0.4s ease-in-out;
+		    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+		    background: -webkit-gradient(linear, left top, left bottom, from(#d6d6d6), to(#f2f2f2));
+		    background: linear-gradient(#d6d6d6, #f2f2f2);
+		    border-radius: 15px; }
+		  .about-img .front {
+		    -webkit-transform: perspective(600px) rotateY(0);
+		    transform: perspective(600px) rotateY(0); }
+		    .about-img .front::after {
+		      content: '';
+		      position: absolute;
+		      width: 100%;
+		      height: 100%;
+		      background: url("./me.jpg") center/cover no-repeat; }
+		  .about-img .back {
+		    -webkit-transform: perspective(600px) rotateY(180deg);
+		    transform: perspective(600px) rotateY(180deg);
+		    display: -moz-flex;
+		    display: -ms-flex;
+		    display: -o-flex;
+		    display: -webkit-box;
+		    display: flex;
+		    -webkit-box-pack: center;
+		    justify-content: center;
+		    -ms-align-items: center;
+		    -webkit-box-align: center;
+		    align-items: center;
+		    text-align: center;
+		    background: #000;
+		    z-index: 2; }
+		    .about-img .back h1 {
+		      color: #fff;
+		      font-size: 32px;
+		      font-weight: 900; }
+		      .about-img .back h1 span {
+		        display: block;
+		        font-size: 20px;
+		        font-weight: 300;
+		        margin: 7px 0;
+		        color: #fff; }
+		    .about-img .back .soc {
+		      list-style-type: none;
+		      display: -moz-inline-flex;
+		      display: -ms-inline-flex;
+		      display: -o-inline-flex;
+		      display: -webkit-inline-box;
+		      display: inline-flex;
+		      -webkit-box-pack: justify;
+		      justify-content: space-between; }
+		      .about-img .back .soc a {
+		        margin: 0 5px;
+		        color: #af8;
+		        text-decoration: none;
+		        width: 40px;
+		        height: 40px;
+		        display: -moz-flex;
+		        display: -ms-flex;
+		        display: -o-flex;
+		        display: -webkit-box;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        justify-content: center;
+		        -ms-align-items: center;
+		        -webkit-box-align: center;
+		        align-items: center;
+		        font-size: 24px;
+		        border-radius: 50%;
+		        -webkit-transition: 0.4s ease;
+		        transition: 0.4s ease; }
+		        .about-img .back .soc a:hover {
+		          background-color: #222;
+		          color: aqua; }
+
+
+		          .main-section .container {
+		          	max-width: 1200px;
+		          	margin: 0 auto;
+		          	display: -webkit-flex;
+		          	display: -moz-flex;
+		          	display: -ms-flex;
+		          	display: -o-flex;
+		          	display: flex;
+		          	justify-content: space-between;
+		          }
+
+		         .bg-2 .ents__text, .bg-3 .ents__text, .bg-4 .ents__text {
+		         	padding-left: 380px;
+		         	padding-right: 50px;
+		         	max-width: 840px;
+		         	line-height: 1.6;
+		         	color: pink;
+		         }
+
+		          @media (max-width: 1735px) {
+		          	.main-section .container {
+		 				padding: 0 140px;
+		          	}
+		          	.menuted {
+		          		left: 1%;
+		          	}
+		          }
+
+		          @media (max-width: 1435px) {
+		          	.main-section .container {
+		          		padding: 0 155px;
+		          	}
+		          	.menuted {
+		          		width: 120px;
+
+		          	}
+		          	.sec-post__link {
+		          		max-width: 115px
+		          		padding: 4px 7px;
+		          	}
+		          	.sec-post__link span {
+		          		font-size: 16px;
+		          	}
+		          }
+
+		          @media (max-width: 1200px) {
+		          	.main-section .container {
+		          		padding: 0 180px;
+		          	}
+		          	.about-img {
+		          		max-width: 360px;
+		          	}
+		          	.ents__text {
+		          		font-size: 14px;
+		          		max-width: 240px;
+		          		margin-right: 40px;
+		          	}
+		          }
+
+		          @media (max-width: 992px) {
+		          	.main-section .container {
+		          		padding: 0 160px;
+		          		padding-left: 220px;
+		          		-webkit-flex-direction: column;
+		          		-moz-flex-direction: column;
+		          		-ms-flex-direction: column;
+		          		-o-flex-direction: column;
+		          		flex-direction: column;
+		          		-ms-align-items: center;
+		          		align-items: center;
+		          	}
+		          	.ents__text {
+		          		max-width: 500px;
+		          		text-align: center;
+		          		margin-right: 0;
+		          	}
+		          }
+
+		          @media (max-width: 650px) {
+		          	
+		          	.main-section {
+		          		padding: 40px 20px;
+		          	}
+
+		          	.main-section .container {
+		          		padding: 0;
+		          		padding-left: 130px
+		          	}
+
+		          	.ents__text {
+		          		order: 2;
+		          		margin-top: 25px;
+		          	}
+
+		          	.bg-2 .ents__text, .bg-3 .ents__text, .bg-4 .ents__text {
+		          		padding-left: 180px;
+		          		max-width: 100%
+		          		padding-right: 20px;
+		          	}
+
+		          	.container .about-img {
+		          		height: 360px;
+		          		width: 300px;
+		          	}
+
+		          	.bg {
+		          		padding-right: 0;
+		          	}
+		          	.bg.ents {
+		          		padding-left: 0;
+		          	}
+		          	.ents__text {
+		          		padding: 0 25px;
+		          		font-size: 16px;
+		          	}
+
+		          	.sec-post__link {
+		          		margin-bottom: 25px;
+		          	}
+
+		          	.sec-post__link span {
+		          		font-size: 18px;
+		          	}
+		          }
+
+		          @media(max-width: 520px) {
+
+					.main-section .container {
+						padding: 0;
+						padding-left: 40px;
+					}
+
+					.main-section .about-img {
+						width: 220px;
+						height: 400px;
+					}
+
+					.hide-text {
+						display: none;
+					}
+
+		          	.menuted a span {
+		          		font-size: 14px
+		          	}
+		          	.menuted a {
+		          		max-width: 40px
+		          	}
+		          	.about-img .back h1 {
+		          		font-size: 24px;
+		          	}
+		          	.about-img .back h1 span {
+		          		font-size: 18px;
+		          	}
+		          	.about-img .back .soc a {
+		          		font-size: 20px;
+		          	}
+
+		          	.bg-2 .ents__text, .bg-3 .ents__text, .bg-4 .ents__text {
+		          		padding-left: 90px;
+		          		margin-top: 0;
+		          		padding-right: 10px;
+		          		text-align: left;
+		          	}
+		          }
+
+		          @media (max-height: 660px) {
+		          	.main-section {
+		          		overflow-y: scroll
+		          	}
+					.bg {
+						min-height: 685px
+					}
+		          }	
 
 
 	</style>
@@ -165,30 +484,53 @@
 	<section class="main-section ps">
 	  <div class="main-section__bg">
 	    <div class="bg bg-1 ents">
-	    	<p class="ents__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения.</p>
+	    	<div class="container">
+	    		<p class="ents__text tt">Меня зовут adamaka, заспаунился на Руси. 19yo. Ur waiting...</p>
+	    		<div class="about-img">
+	    			<div class="card">
+	    				<div class="front">
+	    					<div class="img"></div>
+	    				</div>
+	    				<div class="back">
+	    					<div class="content">
+	    						<h1>
+	    							Adam Sayn
+	    							<span>Frontend Developer</span>
+	    						</h1>
+	    						<ul class="soc">
+	    							<li><a href="https://vk.com"><i class="fa fa-vk" target="_blank"></i></a></li>
+	    							<li><a href="https://github.com/adamaka47"><i class="fa fa-github" target="_blank"></i></a></li>
+	    							<li><a href="https://twitch.com/ho1yadam"><i class="fa fa-twitch" target="_blank"></i></a></li>
+	    							<li><a href="https://teleg.run/poglife"><i class="fa fa-telegram" target="_blank"></i></a></li>
+	    						</ul>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
 	    </div>
 	    <div class="bg bg-2">
-	    	<p class="ents__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения.</p>
+	    	<p class="ents__text">Я являюсь дефолтным junior-фронтендером, знающим стек технологий, от gulp до webpack, пишу на нативном JS или не на JS(где лень писать на нативе). Умею пробрасывать дефолтные уязвимости, XSS, SQL-инъекции, но все же я далеко не профи в этом деле.</p>
 	    </div>
 	    <div class="bg bg-3">
-	    	<p class="ents__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения.</p>
+	    	<p class="ents__text">В будушем хочу стать фуллстэком, совместив технологии, которые бы дополняли друг друга на уровне совершенства.</p>
 	    </div>
 	    <div class="bg bg-4">
-	    	<p class="ents__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Lorem, осталось вскоре от всех, большой великий все о образ рукопись над пунктуация возвращайся безопасную предложения.</p>
+	    	<p class="ents__text">В вебе больше года, мне нравится все, что с ним связано, от веб-дизайна до веб-безопасности.</p>
 	    </div>
 	  </div>
-	  <nav class="menu">
+	  <nav class="menuted">
         <a href="#" class="sec-post__link active" data-index="1">
-          <span>01. Galaxy</span>
+          <span>01. <span class="hide-text">Я</span></span>
         </a href="#">
         <a href="#" class="sec-post__link" data-index="2">
-          <span>02. Champion</span>
+          <span>02. <span class="hide-text">Опыт</span></span>
         </a href="#">
         <a href="#" class="sec-post__link" data-index="3">
-          <span>03. Sword</span>
+          <span>03. <span class="hide-text">Цели</span></span>
         </a href="#">
         <a href="#" class="sec-post__link link-last" data-index="4">
-          <span>04. Project</span>
+          <span>04. <span class="hide-text">Мысли</span></span>
         </a href="#">
 	  </nav>
 	</section>
@@ -199,74 +541,66 @@
 	<script src="t.min.js"></script>
 	<script>
 
-
-	document.addEventListener('DOMContentLoaded', function() {
-
-		let links = document.querySelectorAll('.sec-post__link')
-		let bgs = document.querySelectorAll('.main-section__bg')
-		let bg = document.querySelectorAll('.bg')
-		let arr = ['musor', true, true, true]
-
-			$('.bg-1 .ents__text').t({
-		        speed: 15,
-		         caret:'<span style="color:#af8;">•</span>'
-			 });
-
-		links[1].addEventListener('click', function() {
-				if (arr[1]) {
-						$('.bg-2 .ents__text').t({
-					        speed: 20,
-					         caret:'<span style="color:#8fa;">•</span>'
-						 });
-						arr[1] = false;
-				}
-		})
-
-		links[2].addEventListener('click', function() {
-			if (arr[2]) {
-					$('.bg-3 .ents__text').t({
-				        speed: 25,
-				         caret:'<span style="color:#fea100;">•</span>'
+		document.addEventListener('DOMContentLoaded', function() {
+				let links = document.querySelectorAll('.sec-post__link')
+				let bgs = document.querySelectorAll('.main-section__bg')
+				let bg = document.querySelectorAll('.bg')
+				let arr = ['musor', true, true, true]
+					$('.bg-1 .tt').t({
+				        speed: 15,
+				         caret:'<span style="color:#af8;">•</span>'
 					 });
-					arr[2] = false;
-			}
-		})
 
-		links[3].addEventListener('click', function() {
-			if (arr[3]) {
-					$('.bg-4 .ents__text').t({
-				        speed: 30,
-				         caret:'<span style="color:#ff0036;">•</span>'
-					 });
-					arr[3] = false;
-			}
-		})
-
-
-		links.forEach(item => {
-			item.addEventListener('click', function(e) {
-				e.preventDefault();
-				let index = this.dataset.index;
-				if (!this.classList.contains('active')) {
-					links.forEach(item => {
-						item.classList.remove('active');
-						this.classList.add('active')
-						bgs.forEach(item => item.classList.add('ops'))
-						bgs.forEach(item => item.classList.add('trf'))
-						setTimeout(() => {
-							bg.forEach(item => item.classList.remove('ents'))
-							setTimeout(item => {
-								document.querySelector('.bg-' + index).classList.add('ents')
-								bgs.forEach(item => item.classList.remove('ops'))
-								bgs.forEach(item => item.classList.remove('trf'))
-							}, 100)
-						}, 200)
+				links[1].addEventListener('click', function() {
+						if (arr[1]) {
+								$('.bg-2 .ents__text').t({
+							        speed: 20,
+							         caret:'<span style="color:#8fa;">•</span>'
+								 });
+								arr[1] = false;
+						}
+				})
+				links[2].addEventListener('click', function() {
+					if (arr[2]) {
+							$('.bg-3 .ents__text').t({
+						        speed: 25,
+						         caret:'<span style="color:#fea100;">•</span>'
+							 });
+							arr[2] = false;
+					}
+				})
+				links[3].addEventListener('click', function() {
+					if (arr[3]) {
+							$('.bg-4 .ents__text').t({
+						        speed: 30,
+						         caret:'<span style="color:#ff0036;">•</span>'
+							 });
+							arr[3] = false;
+					}
+				})
+				links.forEach(item => {
+					item.addEventListener('click', function(e) {
+						e.preventDefault();
+						let index = this.dataset.index;
+						if (!this.classList.contains('active')) {
+							links.forEach(item => {
+								item.classList.remove('active');
+								this.classList.add('active')
+								bgs.forEach(item => item.classList.add('ops'))
+								bgs.forEach(item => item.classList.add('trf'))
+								setTimeout(() => {
+									bg.forEach(item => item.classList.remove('ents'))
+									setTimeout(item => {
+										document.querySelector('.bg-' + index).classList.add('ents')
+										bgs.forEach(item => item.classList.remove('ops'))
+										bgs.forEach(item => item.classList.remove('trf'))
+									}, 100)
+								}, 200)
+							})
+						}
 					})
-				}
+				})
 			})
-		})
-
-	})
 
 	</script>
 
